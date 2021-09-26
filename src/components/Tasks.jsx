@@ -2,14 +2,14 @@ import React from "react";
 
 import Task from "./Task";
 
-const Tasks = ({tasks}) => {
-    
-    return(
+const Tasks = ({ tasks,  handleTaskClick}) => {
+
+    return (
         // FRAGMANT <> </>
         <>
-            {tasks.map(task => 
+            {tasks.map(task =>
 
-                <Task task={task} />
+                <Task task={task} handleTaskClick={handleTaskClick}/>
 
             )}
         </>
