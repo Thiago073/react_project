@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
-import Tasks from './components/Tasks'
-import './App.css'
+import Tasks from './components/Tasks';
+import './App.css';
 import AddTask from './components/AddTask';
 
 
@@ -29,11 +29,11 @@ const App = () => {
 
     const handleTaskClick = (taskId) => {
         const newTasks = tasks.map((task) => {
-            if (task.id === taskId) return {... task, completed: !task.completed}
+            if (task.id === taskId) return { ...task, completed: !task.completed}
             
             return task;
         });
-        setTask(newTasks)
+        setTask(newTasks);
     };
 
     const handleTaskAddition = (taskTitle) => {
@@ -48,8 +48,8 @@ const App = () => {
     return ( 
         <>
             <div className = "container" >
-                <AddTask handleTaskAddition = { handleTaskAddition } handleTaskClick={handleTaskClick} /> 
-                <Tasks tasks = { tasks }/> 
+                <AddTask handleTaskAddition = { handleTaskAddition } /> 
+                <Tasks tasks = { tasks } handleTaskClick={handleTaskClick}/> 
             </div > 
         </>
     );
